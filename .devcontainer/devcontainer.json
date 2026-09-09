@@ -1,0 +1,22 @@
+{
+  "name": "discord-sandbox",
+  "image": "lscr.io/linuxserver/chromium:latest",
+  "runArgs": ["--shm-size=1gb"],
+  "containerEnv": {
+    "PUID": "1000",
+    "PGID": "1000",
+    "TZ": "Etc/UTC",
+    "CHROME_CLI": "https://discord.com/app"
+  },
+  "forwardPorts": [3000, 3001],
+  "portsAttributes": {
+    "3000": {
+      "label": "Chromium Desktop (HTTP)",
+      "onAutoForward": "notify"
+    },
+    "3001": {
+      "label": "Chromium Desktop (HTTPS)",
+      "onAutoForward": "ignore"
+    }
+  }
+}
