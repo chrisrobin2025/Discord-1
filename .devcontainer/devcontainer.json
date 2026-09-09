@@ -1,6 +1,7 @@
 {
   "name": "discord-sandbox",
   "image": "lscr.io/linuxserver/chromium:latest",
+  "overrideCommand": false,
   "runArgs": ["--shm-size=1gb"],
   "containerEnv": {
     "PUID": "1000",
